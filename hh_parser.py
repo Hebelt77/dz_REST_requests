@@ -111,7 +111,10 @@ pprint.pprint(result)
 with open('hh vacancies.json', 'w', encoding='utf-8') as f:
     json.dump(result, f)
 
+with open('url_internship.json', 'w+') as f:
+    json.dump(url_alternate, f)
+
 
 if __name__ == '__main__':
     f = True
-    
+
