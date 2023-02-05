@@ -11,7 +11,7 @@ url_vacancies = 'https://api.hh.ru/vacancies'
 n = 'Python Developer OR Python Junior OR Junior Python'
 
 name = input('Введите название интересующей вакансии: ')
-
+num_page = input("Сколько страниц обработать")
 
 def request():  # Функция get запроса по параметрам
     result = requests.get(url_vacancies, params=params).json()
@@ -32,7 +32,7 @@ salary = {  # Диапазон зарплат
 }
 
 for page in range(get['pages']):            # Перебираем страницы с вакансиями
-    if page > 10:
+    if page > num_page:
         break
     else:
         print(f'Ищем на странице {page}')
