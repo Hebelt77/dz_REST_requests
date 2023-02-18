@@ -77,24 +77,3 @@ def send_file(message):
 
 
 bot.infinity_polling()
-
-# @bot.message_handler(commands=['parser'])  # Команда просит ввести данные для поиска и запускает парсер
-# def run_parser(message):
-#     bot.reply_to(message, 'Введите название вакансии для поиска...')
-#
-#     @bot.message_handler(content_types=['text'])
-#     def answer(message):
-#         user_id = message.chat.id
-#         name_vacancies = message.text
-#         result = start_parser(name_vacancies)  # Передаём название вакансии в парсер
-#         text = output_print()
-#         sent_message = bot.send_message(user_id, text)
-#         while True:
-#             new_text = output_print()
-#             print(new_text)
-#             if new_text != text:
-#                 text = new_text
-#                 bot.edit_message_text(chat_id=user_id, message_id=sent_message.message_id, text=text)
-#             time.sleep(0.1)
-#             # bot.send_message(user_id, f'Поиск завершён...\n'
-#             #                           f'Результаты доступны по команде /file')
