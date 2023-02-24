@@ -11,50 +11,44 @@
 
 <body background="фон5.jpg">
 <div>
-    <a href="home_page.html" class="btn btn-outline-primary btn-sm">Вернуться на домашнюю страницу</a>
+    <a href="/" class="btn btn-outline-primary btn-sm">Вернуться на домашнюю страницу</a>
+    <br>
+    <br>
+    <p>
+        <a href="/form/" class="btn btn-outline-primary btn-sm">Повторить поиск</a>
+    </p>
+
     <h1 class="text-center">Результаты поиска</h1>
     <hr>
 </div>
 
 <table class="table table-bordered border-primary float-start">
     <tr>
-        <td colspan="3" class="table-active text-center h4">Требования к указанной вакансии</td>
-    </tr>
-    <tr class="table-primary">
-        <th>Навык</th>
-        <th>Количество вакансий</th>
-        <th>Популяность</th>
+        <td colspan="5" class="table-active text-center h4"></td>
     </tr>
 
-    <tr>
-        <th>Python</th>
-        <th>187</th>
-        <th>14.4%</th>
-    </tr>
 
-    <tr>
-        <th>PostgreSQL</th>
-        <th>80</th>
-        <th>6.2%</th>
-    </tr>
+    <!--        Заголовки таблицы-->
 
-    <tr>
-        <th>Git</th>
-        <th>75</th>
-        <th>5.8%</th>
-    </tr>
+     <tr class="table-primary">
+        {% for key in keys %}
 
-    <tr>
-        <th>SQL</th>
-        <th>67</th>
-        <th>5.2%</th>
-    </tr>
+        <th>{{key}}</th>
 
+        {% endfor %}
+     </tr>
+
+    {% for item in result %}
     <tr>
-        <th>Django Framework</th>
-        <th>62</th>
-        <th>4.8%</th>
+
+        <th>{{item['name']}}</th>
+        <th>{{item['price']}}</th>
+        <th>{{item['foto']}}</th>
+        <th>{{item['url']}}</th>
+        <th>{{item['reviews']}}</th>
+
     </tr>
+        {% endfor %}
 </table>
 
 <hr>
@@ -103,7 +97,7 @@
     </tr>
 </table>
 </div>
-<a href="form_search.html" class="btn btn-primary text-end">Повторить поиск</a>
+<a href="/form/" class="btn btn-primary text-end">Повторить поиск</a>
 
 <br>
 <hr>
