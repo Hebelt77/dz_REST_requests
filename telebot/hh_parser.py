@@ -122,7 +122,7 @@ class Parser:
             self.result['employment'][0].update({'url_internship': url_alternate})
 
         pprint.pprint(self.result)
-        with open('hh vacancies.json', 'w', encoding='utf-8') as f:
+        with open('../hh vacancies.json', 'w', encoding='utf-8') as f:
             json.dump(self.result, f)
 
         with open('url_internship.json', 'w+') as f:
