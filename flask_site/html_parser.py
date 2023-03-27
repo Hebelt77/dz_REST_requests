@@ -137,6 +137,8 @@ class Parser:
             for item in self.results:
                 file.writerow(item)
 
+        return self.results
+
 
 if __name__ == '__main__':
     parser = Parser()
